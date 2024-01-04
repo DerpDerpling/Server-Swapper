@@ -9,7 +9,7 @@ public class ServerSwapCMDClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		CommandRegistrationCallback.EVENT.register((dispatcher, dedicated, derp) -> {
-			ServerSwapCMD.register(dispatcher);
+			ServerSwapCMD.register();
 		});
 		}
 
