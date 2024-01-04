@@ -2,10 +2,10 @@
 	"schemaVersion": 1,
 	"id": "srvswap",
 	"version": "${version}",
-	"name": "Server-Swapper",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Server Swapper",
+	"description": "Allows you to swap servers in game via a command!",
 	"authors": [
-		"Me!"
+		"DerpDerpling"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -13,29 +13,19 @@
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/srvswap/icon.png",
-	"environment": "*",
+	"environment": "client",
 	"entrypoints": {
 		"main": [
-			"derp.srvswap.ExampleMod"
+			"derp.srvswap.ServerSwapCMD"
 		],
 		"client": [
-			"derp.srvswap.ExampleModClient"
+			"derp.srvswap.ServerSwapCMDClient"
 		]
 	},
-	"mixins": [
-		"srvswap.mixins.json",
-		{
-			"config": "srvswap.client.mixins.json",
-			"environment": "client"
-		}
-	],
 	"depends": {
 		"fabricloader": ">=0.15.3",
 		"minecraft": "~1.20.4",
 		"java": ">=17",
 		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
 	}
 }
