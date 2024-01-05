@@ -5,8 +5,8 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.screen.ConnectScreen;
 import net.minecraft.client.gui.screen.TitleScreen;
-import net.minecraft.client.gui.screen.multiplayer.ConnectScreen;
 import net.minecraft.client.network.ServerAddress;
 import net.minecraft.client.network.ServerInfo;
 
@@ -31,12 +31,12 @@ public class ServerSwapCMD {
             }
 
             ServerAddress address = ServerAddress.parse(serverIp);
-            ServerInfo info = new ServerInfo("", serverIp, ServerInfo.ServerType.OTHER);
+            ServerInfo info = new ServerInfo("", serverIp, false);
 
             client.inGameHud.getChatHud().addMessage(Text.literal("Connecting to " + serverIp));
 
             // Connect to server
-            ConnectScreen.connect(new TitleScreen(), client, address, info, false);
+            ConnectScreen.connect(new TitleScreen(), client, address, info);
         });
 
         return 1;
